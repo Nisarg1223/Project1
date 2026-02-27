@@ -7,4 +7,7 @@ const upload = multer({storage: multer.memoryStorage()});
 
 Router.post('/',upload.single('image'), postController.createPostController);
 
+Router.get('/',postController.getAllPostsController);
+
+Router.get('/details/:id',postController.getPostDetailsController);
 module.exports = Router;
